@@ -1,0 +1,231 @@
+{% extends "pages/base.html" %}
+{% block title %}{{post.title}}{% endblock %}
+
+{% block content %}
+
+<div class="breadcrumb-area breadcrumb-area-2 bg-2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-5">
+                <div class="breadcrumb-txt">
+                    <h1>blog details</h1>
+                    <ul>
+                        <li>Home</li>
+                        <li><i class="fas fa-chevron-right"></i>
+                        </li>
+                        <li>blog details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="blog blog-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8">
+                <div class="main-content">
+                    <h2 class="main-title">{{post.title}}</h2>
+                    <div class="main-image">
+                        <img src="{{Post.image.url}}" alt="image">
+                    </div>
+                    <div class="blog-info">
+                        <div class="admin">
+                            <div class="img">
+                                <img src="assets/images/blog-admin.png" alt="image">
+                            </div>
+                            <p>by admin <span>/</span> {{post.date}}</p>
+                        </div>
+                        <div class="add-info">
+                            <div class="comnt">
+                                <i><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="comment" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-comment fa-w-16 fa-fw"><path fill="currentColor" d="M256 64c123.5 0 224 79 224 176S379.5 416 256 416c-28.3 0-56.3-4.3-83.2-12.8l-15.2-4.8-13 9.2c-23 16.3-58.5 35.3-102.6 39.6 12-15.1 29.8-40.4 40.8-69.6l7.1-18.7-13.7-14.6C47.3 313.7 32 277.6 32 240c0-97 100.5-176 224-176m0-32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26 3.8 8.8 12.4 14.5 22 14.5 61.5 0 110-25.7 139.1-46.3 29 9.1 60.2 14.3 93 14.3 141.4 0 256-93.1 256-208S397.4 32 256 32z" class=""></path></svg></i>
+                                <span>340</span>
+                            </div>
+                            <div class="like">
+                                <i><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-heart fa-w-16 fa-fw"><path fill="currentColor" d="M462.3 62.7c-54.5-46.4-136-38.7-186.6 13.5L256 96.6l-19.7-20.3C195.5 34.1 113.2 8.7 49.7 62.7c-62.8 53.6-66.1 149.8-9.9 207.8l193.5 199.8c6.2 6.4 14.4 9.7 22.6 9.7 8.2 0 16.4-3.2 22.6-9.7L472 270.5c56.4-58 53.1-154.2-9.7-207.8zm-13.1 185.6L256.4 448.1 62.8 248.3c-38.4-39.6-46.4-115.1 7.7-161.2 54.8-46.8 119.2-12.9 142.8 11.5l42.7 44.1 42.7-44.1c23.2-24 88.2-58 142.8-11.5 54 46 46.1 121.5 7.7 161.2z" class=""></path></svg></i>
+                                <span>1025</span>
+                            </div>
+                            <div class="view">
+                                <i><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="eye" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-eye fa-w-18 fa-fw"><path fill="currentColor" d="M288 288a64 64 0 0 0 0-128c-1 0-1.88.24-2.85.29a47.5 47.5 0 0 1-60.86 60.86c0 1-.29 1.88-.29 2.85a64 64 0 0 0 64 64zm284.52-46.6C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 96a128 128 0 1 1-128 128A128.14 128.14 0 0 1 288 96zm0 320c-107.36 0-205.46-61.31-256-160a294.78 294.78 0 0 1 129.78-129.33C140.91 153.69 128 187.17 128 224a160 160 0 0 0 320 0c0-36.83-12.91-70.31-33.78-97.33A294.78 294.78 0 0 1 544 256c-50.53 98.69-148.64 160-256 160z" class=""></path></svg></i>
+                                <span>9850</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-txt">
+                        <p>{{post.decription}}</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-sm-6">
+                            <div class="part-img top">
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-sm-6">
+                            <div class="part-img">
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-txt">
+                        <p>{{post.body}}</p>
+                       
+                            
+                    </div>
+                    <div class="other-info">
+                        <div class="tags-btn">
+                            <a href="#">Beauty Shop</a>
+                            <a href="#">Fashion</a>
+                            <a href="#">Jewelry</a>
+                            <a href="#">Shop</a>
+                        </div>
+                        <div class="socials">
+                            <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="tw"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="gl"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#" class="ld"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="yt"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="review-area">
+                        <h3 class="title">Review ( 03 )</h3>
+                        <div class="blog-comment">
+                            {% for comment in post.comments.all %}
+                                <h4><strong>{{comment.author}}</strong></h4>
+                                <h6><p>{{comment.date}}</p></h6>
+                                <p>{{comment.body|safe|linebreaks}}</p>
+                            {% endfor %}
+                        </div>
+                        <div class="post-a-review">
+                            {% if user.username %}
+                                <form action="{% url 'post' post.id %}" method='POST'>
+                                    {% csrf_token %}
+                                    <p><label>Review</label></p>
+                                    {{form.body}}
+                                    <br/>
+                                    <input  type="submit" value="Comment">
+                                </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4">
+                <div class="sidebar">
+                    <div class="search-area">
+                        <form>
+                            <input type="search" placeholder="Search......" required>
+                            <button><i><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-search fa-w-16 fa-fw fa-2x"><path fill="currentColor" d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z" class=""></path></svg></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="category">
+                        <h3>Product categories</h3>
+                        <ul>
+                            <li><a href="#">Men Shirt<span>36</span></a>
+                            </li>
+                            <li><a href="#">Bracelet<span>23</span></a>
+                            </li>
+                            <li><a href="#">Lipstick Maakeup<span>98</span></a>
+                            </li>
+                            <li><a href="#">Women Dress<span>65</span></a>
+                            </li>
+                            <li><a href="#">Men & Women Watch<span>45</span></a>
+                            </li>
+                            <li><a href="#">Faoundation Brush<span>30</span></a>
+                            </li>
+                            <li><a href="#">Top Women<span>20</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="recent-post">
+                        <h3>Recent Post</h3>
+                        <ul>
+                            <li>
+                                <div class="part-img">
+                                    <img src="assets/images/blog-thumb-1.jpg" alt="image">
+                                </div>
+                                <div class="part-txt">
+                                    <a href="#">Female in casual white t shirt overalls, red bandana</a>
+                                    <span class="date"><i class="far fa-calendar-alt"></i>6 April 2021</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="part-img">
+                                    <img src="assets/images/blog-thumb-2.jpg" alt="image">
+                                </div>
+                                <div class="part-txt">
+                                    <a href="#">Beautiul woman with green make up and creative color of nails</a>
+                                    <span class="date"><i class="far fa-calendar-alt"></i>6 April 2021</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="part-img">
+                                    <img src="assets/images/blog-thumb-3.jpg" alt="image">
+                                </div>
+                                <div class="part-txt">
+                                    <a href="#">Portrait of woman with wavy hair eye with makeup brush</a>
+                                    <span class="date"><i class="far fa-calendar-alt"></i>6 April 2021</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sale-products">
+                        <h3>Sale Products</h3>
+                        <ul>
+                            <li>
+                                <div class="part-img">
+                                    <img src="assets/images/feat-prd-5-a.png" class="img-1" alt="image">
+                                    <img src="assets/images/feat-prd-5-b.png" class="img-2" alt="image">
+                                </div>
+                                <div class="part-txt">
+                                    <a href="#">Foundation Brush</a>
+                                    <h4 class="price">$300 <span>$380</span></h4>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="part-img">
+                                    <img src="assets/images/feat-prd-6-a.png" class="img-1" alt="image">
+                                    <img src="assets/images/feat-prd-6-b.png" class="img-2" alt="image">
+                                </div>
+                                <div class="part-txt">
+                                    <a href="#">Maygel Coronel swimsuit</a>
+                                    <h4 class="price">$560 <span>$600</span></h4>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="part-img">
+                                    <img src="assets/images/feat-prd-7-a.png" class="img-1" alt="image">
+                                    <img src="assets/images/feat-prd-7-b.png" class="img-2" alt="image">
+                                </div>
+                                <div class="part-txt">
+                                    <a href="#">Diamond Frame Heart-Side</a>
+                                    <h4 class="price">$800 <span>$999</span></h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="products-tag">
+                        <h3>Product Tags</h3>
+                        <div class="tags">
+                            <a href="#">Party Dress</a>
+                            <a href="#">Shoes</a>
+                            <a href="#">Watch</a>
+                            <a href="#">Beauty</a>
+                            <a href="#">Nail Polish</a>
+                            <a href="#">Face Brush</a>
+                            <a href="#">Life Styles Men</a>
+                            <a href="#">Eye Liner</a>
+                            <a href="#">Perfume</a>
+                            <a href="#">Ring</a>
+                            <a href="#">Fashion</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock  %}

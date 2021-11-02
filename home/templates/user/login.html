@@ -1,0 +1,19 @@
+{% extends "pages/base.html" %}
+{% block title %}login{% endblock %}
+{% block content %}
+    <form style="text-align:center" action="" method="POST">
+        {% csrf_token %}
+        <table style="margin-left:550px">
+            <tr style="margin:30px">
+                <td>Tài khoản</td>
+                <td><input type="text" name="taikhoan"></td>
+            </tr>
+            <tr>
+                <td>Mật Khẩu</td>
+                <td><input type="password" name="matkhau"></td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="Đăng nhập">
+    </form>
+{% endblock  %}

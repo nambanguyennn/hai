@@ -1,0 +1,128 @@
+{% extends "pages/base.html" %}
+{% block content %}
+{% block title %}{{Category.title}}{% endblock %}
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-5">
+                <div class="breadcrumb-txt">
+                    <h1>Shop Grid</h1>
+                    <ul>
+                        <li>Home</li>
+                        <li><i class="fas fa-chevron-right"></i></li>
+                        <li>Shop Grid</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="shop-grid">
+    <div class="container">
+        <div class="top">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-4">
+                    <div class="part-btn">
+                        <a href="#" class="active"><i class="fas fa-th"></i></a>
+                        <a href="#"><i class="icofont-listine-dots"></i></a>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-8">
+                    <div class="form-area">
+                        <form>
+                            <label>Sort by :</label>
+                            <select>
+                                <option>Relevance</option>
+                                <option>Name</option>
+                                <option>Price</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="all-product">
+            <div class="row">
+                {% for pro in Product %}
+                    {% if pro.activate %}
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-box">
+                        <div class="part-img">
+                            <img src="{{pro.image.url}}" class="img-1" alt="image">
+                            <img src="{{pro.image.url}}" class="img-2" alt="image">
+                            <div class="tags">
+                                <span class="tag t-orng">new</span>
+                            </div>
+                        </div>
+                        <div class="part-txt">
+                            <a href="/product/{{pro.id}}" class="name">{{pro.title}}</a>
+                            <h4 class="price">${{pro.price}} <span>$550</span></h4>
+                            <div class="bottom">
+                                <div class="star">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <a href="#" class="add-to-chart">add to chart</a>
+                            </div>
+                        </div>
+                        <div class="side-btn">
+                            <a href="#">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-heart fa-w-16 fa-fw fa-2x">
+                                    <path fill="currentColor" d="M462.3 62.7c-54.5-46.4-136-38.7-186.6 13.5L256 96.6l-19.7-20.3C195.5 34.1 113.2 8.7 49.7 62.7c-62.8 53.6-66.1 149.8-9.9 207.8l193.5 199.8c6.2 6.4 14.4 9.7 22.6 9.7 8.2 0 16.4-3.2 22.6-9.7L472 270.5c56.4-58 53.1-154.2-9.7-207.8zm-13.1 185.6L256.4 448.1 62.8 248.3c-38.4-39.6-46.4-115.1 7.7-161.2 54.8-46.8 119.2-12.9 142.8 11.5l42.7 44.1 42.7-44.1c23.2-24 88.2-58 142.8-11.5 54 46 46.1 121.5 7.7 161.2z" class=""></path>
+                                </svg>
+                            </a>
+                            <a href="#">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="eye" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-eye fa-w-18 fa-fw fa-2x">
+                                    <path fill="currentColor" d="M288 288a64 64 0 0 0 0-128c-1 0-1.88.24-2.85.29a47.5 47.5 0 0 1-60.86 60.86c0 1-.29 1.88-.29 2.85a64 64 0 0 0 64 64zm284.52-46.6C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 96a128 128 0 1 1-128 128A128.14 128.14 0 0 1 288 96zm0 320c-107.36 0-205.46-61.31-256-160a294.78 294.78 0 0 1 129.78-129.33C140.91 153.69 128 187.17 128 224a160 160 0 0 0 320 0c0-36.83-12.91-70.31-33.78-97.33A294.78 294.78 0 0 1 544 256c-50.53 98.69-148.64 160-256 160z" class=""></path>
+                                </svg>
+                            </a>
+                            <a href="#">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="repeat" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-repeat fa-w-16 fa-fw fa-2x">
+                                    <path fill="currentColor" d="M512 256c0 88.225-71.775 160-160 160H110.628l68.201 68.201c4.686 4.686 4.686 12.284 0 16.971l-5.656 5.656c-4.686 4.686-12.284 4.686-16.971 0l-98.343-98.343c-4.686-4.686-4.686-12.284 0-16.971l98.343-98.343c4.686-4.686 12.284-4.686 16.971 0l5.656 5.656c4.686 4.686 4.686 12.284 0 16.971L110.628 384H352c70.579 0 128-57.421 128-128 0-28.555-9.403-54.952-25.271-76.268-3.567-4.792-3.118-11.462 1.106-15.686l5.705-5.705c5.16-5.16 13.678-4.547 18.083 1.271C499.935 186.438 512 219.835 512 256zM57.271 332.268C41.403 310.952 32 284.555 32 256c0-70.579 57.421-128 128-128h241.372l-68.201 68.201c-4.686 4.686-4.686 12.284 0 16.971l5.656 5.656c4.686 4.686 12.284 4.686 16.971 0l98.343-98.343c4.686-4.686 4.686-12.284 0-16.971L355.799 5.172c-4.686-4.686-12.284-4.686-16.971 0l-5.656 5.656c-4.686 4.686-4.686 12.284 0 16.971L401.372 96H160C71.775 96 0 167.775 0 256c0 36.165 12.065 69.562 32.376 96.387 4.405 5.818 12.923 6.432 18.083 1.271l5.705-5.705c4.225-4.224 4.674-10.893 1.107-15.685z" class=""></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 d-xl-flex d-lg-flex d-md-flex d-block align-items-center">
+                    <div class="part-txt">
+                        
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="pagination">
+                        <ul>
+                        
+                            <li>
+                                {% if Product.has_next %}
+                                    <a href="?page={{ Product.next_page_number }}">Next</a>
+                                {% endif %}
+                            </li>
+                            
+                            <li>
+                                {% if Product.has_previous %}
+                                    <a href="?page={{ Product.previous_page_number }}">Previous</a>
+                                {% endif %}
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

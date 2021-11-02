@@ -1,0 +1,71 @@
+{% extends "pages/base.html" %}
+{% block title %}{{searched}}{% endblock %}
+{% block content %}
+    {% if searched  %}
+        <div class="shop-grid">
+            <div class="container">
+                <div class="top">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-4">
+                            <div class="part-btn">
+                                <a href="#" class="active"><i class="fas fa-th"></i></a>
+                                <a href="#"><i class="icofont-listine-dots"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-8">
+                            <div class="form-area">
+                                <form>
+                                    <label>Sort by :</label>
+                                    <select>
+                                        <option>Relevance</option>
+                                        <option>Name</option>
+                                        <option>Price</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down"></i>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="all-product">
+                    <div class="row">
+                        {% for pro in Product %}
+                            {% if pro.activate %}
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                            <div class="single-box">
+                                <div class="part-img">
+                                    <img src="{{pro.image.url}}" class="img-1" alt="image">
+                                    <img src="{{pro.image.url}}" class="img-2" alt="image">
+                                    <div class="tags">
+                                        <span class="tag t-orng">new</span>
+                                    </div>
+                                </div>
+                                <div class="part-txt">
+                                    <a href="/product/{{pro.id}}" class="name">{{pro.title}}</a>
+                                    <h4 class="price">${{pro.price}} <span>$550</span></h4>
+                                    <div class="bottom">
+                                        <div class="star">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <a href="#" class="add-to-chart">add to chart</a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    {% else %}
+        <h1>Hey! you forgot to search for a venu</h1>
+    {% endif %}
+{% endblock %}

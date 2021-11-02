@@ -1,0 +1,142 @@
+{% extends "pages/base.html" %}
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+
+<div class="breadcrumb-area breadcrumb-area-2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-5">
+                <div class="breadcrumb-txt">
+                    <h1>Shop Cart</h1>
+                    <ul>
+                        <li>Home</li>
+                        <li><i class="fas fa-chevron-right"></i>
+                        </li>
+                        <li>Shop Cart</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="shop-cart">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in items %}
+                            <tr>
+                                <td>
+                                    <div class="product">
+                                        <div class="part-img">
+                                            <img src="{{item.product.image.url}}" alt="image">
+                                        </div>
+                                        <div class="part-txt">
+                                            <p>{{item.product.title}}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="price">
+                                        <p>${{item.product.price}}</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="product-quantity">
+                                        <div class="product-count">
+                                            <div class="quantity rapper-quantity">
+                                                <input type="number" min="1" step="1" value="{{item.qunatity}}">
+                                                <div class="quantity-nav">
+                                                    <div class="quantity-button quantity-down">
+                                                        <i data-product="{{item.product.id}}" data-action="remove" class="update-cart"><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="minus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-minus fa-w-12 fa-fw fa-2x"><path fill="currentColor" d="M376 232H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h368c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z" class=""></path></svg></i>
+                                                    </div>
+                                                    <div class="quantity-button quantity-up">
+                                                        <i data-product="{{item.product.id}}" data-action="add" class="update-cart"><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-plus fa-w-12 fa-fw fa-2x"><path fill="currentColor" d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z" class=""></path></svg></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="total-price">
+                                        <p>${{item.get_total}}</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="delete">
+                                        <i><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="trash-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-trash-alt fa-w-14 fa-fw"><path fill="currentColor" d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z" class=""></path></svg></i>
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="cart-totals">
+            <div class="row justify-content-md-center">
+                <div class="col-xl-6 col-lg-6 col-md-8">
+                    <div class="coupon">
+                        <div class="coupon-title">
+                            <h2>COUPON</h2>
+                        </div>
+                        <div class="part-txt">
+                            <p>Enter your coupon code if you have one</p>
+                            <form>
+                                <div class="wrap">
+                                    <input type="text" placeholder="Coupon Code" required>
+                                </div>
+                                <button>Apply Coupon</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-8">
+                    <div class="proceed-to-checkout">
+                        <div class="checkout-title">
+                            <h2>CART TOTALS</h2>
+                        </div>
+                        <div class="part-txt">
+                            <ul>
+                                <li>Item</li>
+                                <li>{{cart.get_cart_item}}</li>
+                            </ul>
+                            <ul>
+                                <li>Shipping</li>
+                                <li><span>Flat Rate:</span>${{cart.get_cart_total}}</li>
+                            </ul>
+                            <p>Calculate shipping</p>
+                        </div>
+                        <div class="bottom-box">
+                            <ul>
+                                <li>Total</li>
+                                <li>${{cart.get_cart_total}}</li>
+                            </ul>
+                            <a href="{% url 'order' %}">Proceed to Chechout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

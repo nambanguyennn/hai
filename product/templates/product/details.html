@@ -1,0 +1,218 @@
+{% extends "pages/base.html" %}
+{% block title %}{{pro.title}}{% endblock %}
+{% block content %}
+
+<div class="breadcrumb-area breadcrumb-area-2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-5">
+                <div class="breadcrumb-txt">
+                    <h1>Shop details</h1>
+                    <ul>
+                        <li>Home</li>
+                        <li><i class="fas fa-chevron-right"></i>
+                        </li>
+                        <li>Shop details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="shop-details">
+    <div class="container">
+        <div class="item-section">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="part-img">
+                        <div class="owl-thumbs" data-slider-id="2">
+                            <div class="owl-thumb-item">
+                                <div class="product-pic">
+                                    <img src="{{pro.image.url}}" width="110px" height="110px" alt="">
+                                </div>
+                            </div>
+                            <div class="owl-thumb-item">
+                                <div class="product-pic">
+                                    <img src="{{pro.image.url}}" width="110px" height="110px" alt="">
+                                </div>
+                            </div>
+                            <div class="owl-thumb-item">
+                                <div class="product-pic">
+                                    <img src="{{pro.image.url}}" width="110px" height="110px" alt="">
+                                </div>
+                            </div>
+                            <div class="owl-thumb-item">
+                                <div class="product-pic">
+                                    <img src="{{pro.image.url}}" width="110px" height="110px" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-slider owl-carousel owl-theme" data-slider-id="2">
+                            <div class="single-product-slider">
+                                <img src="{{pro.image.url}}" alt="">
+                            </div>
+                            <div class="single-product-slider">
+                                <img src="{{pro.image.url}}" alt="">
+                            </div>
+                            <div class="single-product-slider">
+                                <img src="{{pro.image.url}}" alt="">
+                            </div>
+                            <div class="single-product-slider">
+                                <img src="{{pro.image.url}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="part-txt">
+                        <h3>{{pro.title}}</h3>
+                        <div class="info">
+                            <h4 class="price">${{pro.price}} <span>${{pro.variation.sale_price}}</span></h4>
+                            <h5>Availability: <span>26 in stock</span></h5>
+                        </div>
+                        <div class="item-rating">
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <a href="#">Write a review</a>
+                        </div>
+                        <p></p>
+                        <div class="cart-option">
+                            <ul class="color">
+                                <li>color:</li>
+                                <li>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </li>
+                            </ul>
+                            <ul class="cart">
+                                <li>Quantity:</li>
+                                <li>
+                                    <div class="product-count">
+                                        <div class="quantity rapper-quantity">
+                                            <input type="number" min="1" step="1" value="1">
+                                            <div class="quantity-nav">
+                                                <div class="quantity-button quantity-down">
+                                                    <i><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="minus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-minus fa-w-12 fa-fw fa-2x"><path fill="currentColor" d="M376 232H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h368c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z" class=""></path></svg></i>
+                                                </div>
+                                                <div class="quantity-button quantity-up">
+                                                    <i><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-plus fa-w-12 fa-fw fa-2x"><path fill="currentColor" d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z" class=""></path></svg></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rel-btns">
+                                        <a href="#" class="add-to-cart">add to cart</a>
+                                        <a href="#" class="more"><i><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="repeat" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-repeat fa-w-16 fa-fw fa-1x"><path fill="currentColor" d="M512 256c0 88.225-71.775 160-160 160H110.628l68.201 68.201c4.686 4.686 4.686 12.284 0 16.971l-5.656 5.656c-4.686 4.686-12.284 4.686-16.971 0l-98.343-98.343c-4.686-4.686-4.686-12.284 0-16.971l98.343-98.343c4.686-4.686 12.284-4.686 16.971 0l5.656 5.656c4.686 4.686 4.686 12.284 0 16.971L110.628 384H352c70.579 0 128-57.421 128-128 0-28.555-9.403-54.952-25.271-76.268-3.567-4.792-3.118-11.462 1.106-15.686l5.705-5.705c5.16-5.16 13.678-4.547 18.083 1.271C499.935 186.438 512 219.835 512 256zM57.271 332.268C41.403 310.952 32 284.555 32 256c0-70.579 57.421-128 128-128h241.372l-68.201 68.201c-4.686 4.686-4.686 12.284 0 16.971l5.656 5.656c4.686 4.686 12.284 4.686 16.971 0l98.343-98.343c4.686-4.686 4.686-12.284 0-16.971L355.799 5.172c-4.686-4.686-12.284-4.686-16.971 0l-5.656 5.656c-4.686 4.686-4.686 12.284 0 16.971L401.372 96H160C71.775 96 0 167.775 0 256c0 36.165 12.065 69.562 32.376 96.387 4.405 5.818 12.923 6.432 18.083 1.271l5.705-5.705c4.225-4.224 4.674-10.893 1.107-15.685z" class=""></path></svg></i></a>
+                                        <a href="#" class="more"><i><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-heart fa-w-16 fa-fw fa-1x"><path fill="currentColor" d="M462.3 62.7c-54.5-46.4-136-38.7-186.6 13.5L256 96.6l-19.7-20.3C195.5 34.1 113.2 8.7 49.7 62.7c-62.8 53.6-66.1 149.8-9.9 207.8l193.5 199.8c6.2 6.4 14.4 9.7 22.6 9.7 8.2 0 16.4-3.2 22.6-9.7L472 270.5c56.4-58 53.1-154.2-9.7-207.8zm-13.1 185.6L256.4 448.1 62.8 248.3c-38.4-39.6-46.4-115.1 7.7-161.2 54.8-46.8 119.2-12.9 142.8 11.5l42.7 44.1 42.7-44.1c23.2-24 88.2-58 142.8-11.5 54 46 46.1 121.5 7.7 161.2z" class=""></path></svg></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="pro-code">
+                                <li>SKU:</li>
+                                <li>FW511948218</li>
+                            </ul>
+                            <ul class="share">
+                                <li>Share On:</li>
+                                <li>
+                                    <div class="social">
+                                        <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#" class="tw"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" class="gl"><i class="fab fa-google-plus-g"></i></a>
+                                        <a href="#" class="ld"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="#" class="yt"><i class="fab fa-youtube"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dscr-section">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="box">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="nav-one-tab" data-toggle="tab" href="#nav-one" role="tab" aria-controls="nav-one" aria-selected="true">
+                                    <span>Product Descripton</span><i class="flaticon-description"></i>
+                                </a>
+                                <a class="nav-item nav-link" id="nav-two-tab" data-toggle="tab" href="#nav-two" role="tab" aria-controls="nav-two" aria-selected="false">
+                                    <span>Product Data Sheet</span><i class="flaticon-data"></i>
+                                </a>
+                                <a class="nav-item nav-link" id="nav-three-tab" data-toggle="tab" href="#nav-three" role="tab" aria-controls="nav-three" aria-selected="false">
+                                    <span>Product Revirw </span><i class="flaticon-favourite"></i>
+                                </a>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-one" role="tabpanel" aria-labelledby="nav-one-tab">
+                                <div class="dscr">
+                                    <p>{{pro.description}}</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-two" role="tabpanel" aria-labelledby="nav-two-tab">
+                                <div class="product-data">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6">
+                                            <ul class="first">
+                                                <li><span>Item No:</span>PRB013-FF11</li>
+                                                <li><span>Metal:</span>14k White Gold</li>
+                                                <li><span>Setting:</span>4-Prong Basket</li>
+                                                <li><span>Chain:</span>18-inch Box Chain</li>
+                                                <li><span>Origin:</span>Handcrafted in the USA</li>
+                                                <li><span>Number of Diamonds:</span>1</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6">
+                                            <ul>
+                                                <li><span>Shape:</span>Round</li>
+                                                <li><span>Total Carat Weight:</span>0.13 ct. tw.</li>
+                                                <li><span>Color:</span>I - J</li>
+                                                <li><span>Clarity:</span>I1 - I2</li>
+                                                <li><span>Cut:</span>Good</li>
+                                                <li><span>Creation:</span>Natural Diamond</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-three" role="tabpanel" aria-labelledby="nav-three-tab">
+                                <div class="reviews">
+                                    {% for comment in pro.comments.all %}
+                                        <h4><strong>{{comment.author}}</strong></h4>
+                                        <h6><p>{{comment.date}}</p></h6>
+                                        <p>{{comment.body|safe|linebreaks}}</p>
+                                    {% endfor %}
+                                </div>
+                                <div class="post-a-review">
+                                    {% if user.username %}
+                                        <form action="{% url 'product:details' pro.pk %}" method='POST'>
+                                            {% csrf_token %}
+                                            <p><label>Review</label></p>
+                                            {{form.body}}
+                                            <br/>
+                                            <input  type="submit" value="Comment">
+                                        </form>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}
