@@ -8,12 +8,12 @@
         <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-5">
                 <div class="breadcrumb-txt">
-                    <h1>Shop Cart</h1>
+                    <h1>Giỏ hàng</h1>
                     <ul>
-                        <li>Home</li>
+                        <li>Trang chủ</li>
                         <li><i class="fas fa-chevron-right"></i>
                         </li>
-                        <li>Shop Cart</li>
+                        <li>Giỏ hàng</li>
                     </ul>
                 </div>
             </div>
@@ -30,11 +30,11 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">Product</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Total</th>
-                                <th scope="col">Delete</th>
+                                <th scope="col">Sản phẩm</th>
+                                <th scope="col">Giá</th>
+                                <th scope="col">Số lượng</th>
+                                <th scope="col">Tổng tiền</th>
+                                <th scope="col">Xóa</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -96,15 +96,15 @@
                 <div class="col-xl-6 col-lg-6 col-md-8">
                     <div class="coupon">
                         <div class="coupon-title">
-                            <h2>COUPON</h2>
+                            <h2>PHIẾU MUA HÀNG</h2>
                         </div>
                         <div class="part-txt">
-                            <p>Enter your coupon code if you have one</p>
+                            <p>Nhập mã phiếu giảm giá của bạn nếu bạn có</p>
                             <form>
                                 <div class="wrap">
-                                    <input type="text" placeholder="Coupon Code" required>
+                                    <input type="text" placeholder="Mã giảm giá" required>
                                 </div>
-                                <button>Apply Coupon</button>
+                                <button>Áp dụng phiếu giảm giá</button>
                             </form>
                         </div>
                     </div>
@@ -112,22 +112,22 @@
                 <div class="col-xl-6 col-lg-6 col-md-8">
                     <div class="proceed-to-checkout">
                         <div class="checkout-title">
-                            <h2>CART TOTALS</h2>
+                            <h2>TỔNG GIỎ HÀNG</h2>
                         </div>
                         <div class="part-txt">
                             <ul>
-                                <li>Item</li>
+                                <li>Số lượng</li>
                                 <li>{{cart.get_cart_item}}</li>
                             </ul>
                             <ul>
-                                <li>Shipping</li>
+                                <li>Đang chuyển hàng</li>
                                 <li><span>Flat Rate:</span>${{cart.get_cart_total}}</li>
                             </ul>
-                            <p>Calculate shipping</p>
+                            <p>Tính toán vận chuyển</p>
                         </div>
                         <div class="bottom-box">
                             <ul>
-                                <li>Total</li>
+                                <li>Tổng cộng</li>
                                 <li>${{cart.get_cart_total}}</li>
                             </ul>
                             <a href="{% url 'order' %}">Proceed to Chechout</a>

@@ -5,6 +5,7 @@ from .models import Product,Category
 from django.views.generic import ListView
 from cart.models import Cart,CartItem
 from order.models import Order
+from blog.models import Post
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from django.http import JsonResponse,HttpResponseRedirect
 import json
@@ -27,8 +28,21 @@ def index(request):
         cart={'get_cart_total':0, 'get_cart_item':0, 'shipping':False}
         cartitem=cart['get_cart_item']
     category=Category.objects.all().order_by("time")
-    products=Product.objects.all().order_by("-time")
-    return render(request,'pages/index.html',{"Category":category,"Product":products, 'cartItem':cartitem})
+    queryset=Post.objects.all().order_by("-date")
+    products=Product.objects.all().order_by("-time")[:12]
+    title=category[0].title
+    title1=category[1].title
+
+    print("category ", type(category))
+    return render(request,
+        'pages/index.html',{
+        "Category":category,
+        "Product":products,
+        'cartItem':cartitem, 
+        "title": title,
+        "title1": title1,
+        "Post": queryset,
+        })
 
 def search(request):
     if request.method=='POST':

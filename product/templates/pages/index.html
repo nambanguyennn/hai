@@ -6,42 +6,44 @@
     <div class="slider-1">
         <div class="container">
             <div class="row justify-content-md-center">
-                <div class="col-xl-6 col-lg-6 col-md-9 d-xl-flex d-lg-flex d-block align-items-center">
+                <!-- <div class="col-xl-6 col-lg-6 col-md-9 d-xl-flex d-lg-flex d-block align-items-center">
                     <div class="part-txt">
                         <h4>Super Creamy Under Eye Concealers</h4>
                         <h1>PRODUCTS THAT GLOW AS MUCH <span>AS YOU D0 !</span></h1>
                         <p>There are many variations of passages of Lorem Ipsum available majority have suffered alteration in some</p>
                         <a href="#" class="def-btn">VIEW MORE</a>
                     </div>
-                </div>
-                <div class="col-xl-6 col-lg-6">
+                </div> -->
+
+                <div class="col-xl-12 col-lg-12">
                     <div class="part-img">
-                        <img src="{% static 'images/banner-img-1.png' %}" alt="image">
+                        <img src="{% static 'images/banner.png' %}" style="width: 1895px; margin-left: -360px" alt="image">
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
     <div class="slider-2">
         <div class="container">
             <div class="row justify-content-md-center">
-                <div class="col-xl-7 col-lg-6 col-md-9 d-xl-flex d-lg-flex d-block align-items-center">
+                <!-- <div class="col-xl-7 col-lg-6 col-md-9 d-xl-flex d-lg-flex d-block align-items-center">
                     <div class="part-txt">
                         <h1>Professional Skin Whitening Brush of Makeup</h1>
                         <p>There are many variations of passages of Lorem Ipsum available majority have suffered alteration in some</p>
                         <a href="#" class="def-btn">VIEW MORE</a>
                     </div>
-                </div>
-                <div class="col-xl-5 col-lg-6">
+                </div> -->
+
+                <div class="col-xl-12 col-lg-12">
                     <div class="part-img">
-                        <img src="{% static 'images/banner-img-2.png' %}" alt="image">
+                        <img src="{% static 'images/banner2.png' %}"  style="width: 1895px; margin-left: -360px" alt="image">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 <div class="feature">
 <div class="container">
@@ -52,8 +54,8 @@
 <img src="{% static 'images/ft-icn-1.png' %}" alt="icon">
 </div>
 <div class="part-txt">
-<h3>FREE SHIPPING</h3>
-<p>On all Orders Over $99</p>
+<h3>GIAO HÀNG MIỄN PHÍ</h3>
+<p>TRÊN TẤT CẢ ĐƠN HÀNG TRÊM 999K</p>
 </div>
 </div>
 </div>
@@ -63,8 +65,8 @@
 <img src="{% static 'images/ft-icn-2.png' %}" alt="icon">
 </div>
 <div class="part-txt">
-<h3>CASH BACK OFFER</h3>
-<p>When You Use Credit Card</p>
+<h3>ƯU ĐÃI HOÀN LẠI TIỀN MẶT</h3>
+<p>KHI BẠN SƯU DỤNG THẺ TÍN DỤNG</p>
 </div>
 </div>
 </div>
@@ -74,8 +76,8 @@
 <img src="{% static 'images/ft-icn-3.png' %}" alt="icon">
 </div>
 <div class="part-txt">
-<h3>24/7 SUPPORT</h3>
-<p>Any Time Support Client</p>
+<h3>HỘ TRỢ 24/7</h3>
+<p>HỘ TRỢ KHÁCH HÀNH BẤT KÌ LÚC NÀO</p>
 </div>
 </div>
 </div>
@@ -85,8 +87,8 @@
 <img src="{% static 'images/ft-icn-4.png' %}" alt="icon">
 </div>
 <div class="part-txt">
- <h3>GIFT VOUCHERS</h3>
-<p>Cras a nunc id risus</p>
+ <h3>QUÀ TẶNG VOUCHERS</h3>
+<!-- <p>Cras a nunc id risus</p> -->
 </div>
 </div>
 </div>
@@ -100,24 +102,25 @@
             <div class="row justify-content-between">
                 <div class="col-xl-3 col-lg-3 col-md-4">
                     <div class="sec-title">
-                        <h2>Our Products</h2>
+                        <h2 style="font-size: 19px;">CÁC SẢN PHẨM BÁN CHẠY</h2>
                     </div>
                 </div>
                 <div class="col-xl-9 col-lg-9 col-md-8 d-xl-flex d-lg-flex align-items-end justify-content-end">
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-one-tab" data-toggle="tab" href="#nav-one" role="tab" aria-controls="nav-one" aria-selected="true">Shop Grid One</a>
-                            <a class="nav-item nav-link" id="nav-two-tab" data-toggle="tab" href="#nav-two" role="tab" aria-controls="nav-two" aria-selected="false">Shop Grid Two</a>
+                            <a class="nav-item nav-link active" id="nav-one-tab" data-toggle="tab" href="#nav-one" role="tab" aria-controls="nav-one" aria-selected="true">{{title}}</a>
+                            <a class="nav-item nav-link" id="nav-two-tab" data-toggle="tab" href="#nav-two" role="tab" aria-controls="nav-two" aria-selected="false">{{title1}}</a>
                         </div>
                     </nav>
                 </div>
             </div>
         </div>
+       
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-one" role="tabpanel" aria-labelledby="nav-one-tab">
                 <div class="row">
                     {% for pro in Product %}
-                        {% if pro.category.title == "Shop Gird One" and pro.activate  %}
+                        {% if pro.category.title == title and pro.activate  %}
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <div class="single-box">
                             <div class="part-img">
@@ -129,7 +132,7 @@
                             </div>
                             <div class="part-txt">
                                 <a href="/product/{{pro.id}}" class="name">{{pro.title}}</a>
-                                <h4 class="price">${{pro.price}}<span>${{pro.variation.sale_price}}</span></h4>
+                                <h4 class="price">{{pro.price}} VNĐ<span>{{pro.variation.sale_price}} VNĐ</span></h4>
                                 <div class="bottom">
                                     <div class="star">
                                         <i class="fas fa-star"></i>
@@ -138,7 +141,7 @@
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                     </div>
-                                    <button data-product="{{pro.id}}" data-action="add" class="add-to-cart update-cart">add to chart</button>
+                                    <button data-product="{{pro.id}}" data-action="add" class="add-to-cart update-cart">Thêm vào giỏ hàng</button>
                                 </div>
                             </div>
                             <div class="side-btn">
@@ -163,12 +166,13 @@
                     {% endif %}
                     {% endfor %}
                     
+                    
                 </div>
             </div>
             <div class="tab-pane fade" id="nav-two" role="tabpanel" aria-labelledby="nav-two-tab">
                 <div class="row">
                 {% for pro in Product %}
-                 {% if pro.category.title == "Shop Grid Two" and pro.activate %}
+                 {% if pro.category.title == title1 and pro.activate %}
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <div class="single-box">
                             <div class="part-img">
@@ -180,7 +184,7 @@
                             </div>
                             <div class="part-txt">
                                 <a href="/product/{{pro.id}}" class="name">{{pro.title}}</a>
-                                <h4 class="price">${{pro.price}} <span>$550</span></h4>
+                                <h4 class="price">{{pro.price}} VNĐ<span></span></h4>
                                 <div class="bottom">
                                     <div class="star">
                                         <i class="fas fa-star"></i>
@@ -222,127 +226,134 @@
 
 
 
-<div class="shop">
-<div class="container">
-<div class="row justify-content-center">
-<div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
-<div class="single-box">
-<div class="part-img">
-<img src="{% static 'images/shop-img-1.png' %}" alt="image">
-</div>
-<div class="part-txt">
-<h3>Bundles for a Sale</h3>
-<p>Get 40% off our excliusive<br>bundles full best seller!</p>
-<a href="#">Shop Now</a>
-</div>
-</div>
-<div class="single-box">
-<div class="part-img">
-<img src="{% static 'images/shop-img-4.png' %}" alt="image">
-</div>
-<div class="part-txt">
-<h3>Cosmetics accessories</h3>
-<p>Get 35% off our excliusive<br>bundles full best seller!</p>
- <a href="#">Shop Now</a>
-</div>
-</div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
-<div class="single-box center">
-<div class="part-img">
-<img src="{% static 'images/shop-img-2.png' %}" alt="image">
-</div>
-<div class="part-txt">
-<h3>Facial powders nail polish</h3>
-<p>Get 30% off our excliusive bundles full<br>of best sellers!</p>
-<a href="#">Shop Now</a>
-</div>
-</div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
-<div class="single-box">
-<div class="part-img">
-<img src="{% static 'images/shop-img-3.png' %}" alt="image">
-</div>
-<div class="part-txt">
-<h3>Different cosmetic</h3>
-<p>Get 40% off our excliusive<br>bundles full best seller!</p>
-<a href="#">Shop Now</a>
-</div>
-</div>
-<div class="single-box">
-<div class="part-img">
-<img src="{% static 'images/shop-img-5.png' %}" alt="image">
-</div>
-<div class="part-txt">
-<h3>Makeup products</h3>
-<p>Get 45% off our excliusive<br>bundles full best seller!</p>
-<a href="#">Shop Now</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<!-- <div class="shop">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+                <div class="single-box">
+                    <div class="part-img">
+                        <img src="{% static 'images/shop-img-1.png' %}" alt="image">
+                    </div>
+                    <div class="part-txt">
+                        <h3>Bundles for a Sale</h3>
+                        <p>Get 40% off our excliusive
+                            <br>bundles full best seller!</p>
+                        <a href="#">Shop Now</a>
+                    </div>
+                </div>
+                <div class="single-box">
+                    <div class="part-img">
+                        <img src="{% static 'images/shop-img-4.png' %}" alt="image">
+                    </div>
+                    <div class="part-txt">
+                        <h3>Cosmetics accessories</h3>
+                        <p>Get 35% off our excliusive
+                            <br>bundles full best seller!</p>
+                        <a href="#">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+                <div class="single-box center">
+                    <div class="part-img">
+                        <img src="{% static 'images/shop-img-2.png' %}" alt="image">
+                    </div>
+                    <div class="part-txt">
+                        <h3>Facial powders nail polish</h3>
+                        <p>Get 30% off our excliusive bundles full
+                            <br>of best sellers!</p>
+                        <a href="#">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+                <div class="single-box">
+                    <div class="part-img">
+                        <img src="{% static 'images/shop-img-3.png' %}" alt="image">
+                    </div>
+                    <div class="part-txt">
+                        <h3>Different cosmetic</h3>
+                        <p>Get 40% off our excliusive
+                            <br>bundles full best seller!</p>
+                        <a href="#">Shop Now</a>
+                    </div>
+                </div>
+                <div class="single-box">
+                    <div class="part-img">
+                        <img src="{% static 'images/shop-img-5.png' %}" alt="image">
+                    </div>
+                    <div class="part-txt">
+                        <h3>Makeup products</h3>
+                        <p>Get 45% off our excliusive
+                            <br>bundles full best seller!</p>
+                        <a href="#">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  -->
 
 
 <div class="best-deal">
-<div class="container">
-<div class="row justify-content-center">
-<div class="col-xl-6 col-lg-6 col-md-4 col-sm-10">
-<div class="part-img">
-<img src="{% static 'images/best-deal-img.jpg' %}" alt="image">
-</div>
-</div>
-<div class="col-xl-6 col-lg-6 col-md-8 col-sm-10">
-<div class="part-txt">
-<div class="top-txt">
-<div class="txt">
-<h3>Weekly Deals</h3>
-<p>Special Offer</p>
-</div>
-<div class="special">
-<h4>save<span>$30%</span></h4>
-</div>
-</div>
-<div class="img">
-<img src="{% static 'images/best-deal-s-img.png' %}" alt="image">
-</div>
-<a href="shop-details-1.html">Atomic Vintage Mesh Heart Bodice Swing Dress</a>
-<h4 class="price">$540<span>$840</span></h4>
-<div class="pro-bar">
-<div class="p-txt">
-<p>Already Dress: <span>49</span></p>
-<p>Available: <span>300</span></p>
-</div>
-<div class="bar">
-<span></span>
-</div>
-</div>
-<h5>Hurry Up! Offer ends in:</h5>
-<div class="counter">
-<div class="countdown">
-<div class="single-box">
-<p class="time" id="hours"></p>
-<span class="name">Hours</span>
-</div>
-<span class="devide">:</span>
-<div class="single-box">
-<p class="time" id="mins"></p>
-<span class="name">Mins</span>
-</div>
-<span class="devide">:</span>
-<div class="single-box">
-<p class="time" id="seconds"></p>
-<span class="name">Secs</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="part-img">
+                    <img src="{% static 'images/banner3.gif' %}" style="width: 1102px;" alt="image">
+                </div>
+            </div>
+            <!-- <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10">
+                <div class="part-txt">
+                    <div class="top-txt">
+                        <div class="txt">
+                            <h3>Weekly Deals</h3>
+                            <p>Special Offer</p>
+                        </div>
+                        <div class="special">
+                            <h4>save<span>$30%</span></h4>
+                        </div>
+                    </div>
+                    <div class="img">
+                        <img src="{% static 'images/best-deal-s-img.png' %}" alt="image">
+                    </div>
+                    <a href="shop-details-1.html">Atomic Vintage Mesh Heart Bodice Swing Dress</a>
+                    <h4 class="price">$540<span>$840</span></h4>
+                    <div class="pro-bar">
+                        <div class="p-txt">
+                            <p>Already Dress: <span>49</span>
+                            </p>
+                            <p>Available: <span>300</span>
+                            </p>
+                        </div>
+                        <div class="bar">
+                            <span></span>
+                        </div>
+                    </div>
+                    <h5>Hurry Up! Offer ends in:</h5>
+                    <div class="counter">
+                        <div class="countdown">
+                            <div class="single-box">
+                                <p class="time" id="hours"></p>
+                                <span class="name">Hours</span>
+                            </div>
+                            <span class="devide">:</span>
+                            <div class="single-box">
+                                <p class="time" id="mins"></p>
+                                <span class="name">Mins</span>
+                            </div>
+                            <span class="devide">:</span>
+                            <div class="single-box">
+                                <p class="time" id="seconds"></p>
+                                <span class="name">Secs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div> 
 
 <div class="best-seller">
     <div class="container">
@@ -350,7 +361,7 @@
             <div class="col-xl-3 col-lg-3 col-md-5 col-sm-8">
                 <div class="sidebar">
                     <div class="top">
-                        <h2>Feature Products</h2>
+                        <h2>Sản phầm nổi bật</h2>
                     </div>
                     <div class="sidebar-slider owl-carousel">
                         <ul>
@@ -408,7 +419,7 @@
                         <div class="row justify-content-between">
                             <div class="col-xl-3 col-lg-3 col-md-4">
                                 <div class="sec-title">
-                                    <h2>Best Sallers</h2>
+                                    <h2>Bán chạy nhất</h2>
                                 </div>
                             </div>
                             <div class="col-xl-9 col-lg-9 col-md-8 d-xl-flex d-lg-flex align-items-end justify-content-end">
@@ -449,7 +460,7 @@
                                                         <i class="fas fa-star"></i>
                                                         <i class="fas fa-star"></i>
                                                     </div>
-                                                    <a href="#" class="add-to-chart">add to chart</a>
+                                                    <a href="#" class="add-to-chart">Thêm vào giỏ hàng</a>
                                                 </div>
                                             </div>
                                             <div class="side-btn">
@@ -489,7 +500,7 @@
                                             </div>
                                             <div class="part-txt">
                                                 <a href="/product/{{pro.id}}" class="name">{{pro.title}}</a>
-                                                <h4 class="price">{{pro.price}} <span>$630</span></h4>
+                                                <h4 class="price">{{pro.price}} <span>630 VNĐ</span></h4>
                                                 <div class="bottom">
                                                     <div class="star">
                                                         <i class="fas fa-star"></i>
@@ -498,7 +509,7 @@
                                                         <i class="fas fa-star"></i>
                                                         <i class="fas fa-star"></i>
                                                     </div>
-                                                    <a href="#" class="add-to-chart">add to chart</a>
+                                                    <a href="#" class="add-to-chart">Thêm vào giỏ hàng</a>
                                                 </div>
                                             </div>
                                             <div class="side-btn">
@@ -553,7 +564,7 @@
                                                         <i class="fas fa-star"></i>
                                                         <i class="fas fa-star"></i>
                                                     </div>
-                                                    <a href="#" class="add-to-chart">add to chart</a>
+                                                    <a href="#" class="add-to-chart">Thêm vào giỏ hàng</a>
                                                 </div>
                                             </div>
                                             <div class="side-btn">
@@ -602,7 +613,7 @@
                                                         <i class="fas fa-star"></i>
                                                         <i class="fas fa-star"></i>
                                                     </div>
-                                                    <a href="#" class="add-to-chart">add to chart</a>
+                                                    <a href="#" class="add-to-chart">Thêm vào giỏ hàng</a>
                                                 </div>
                                             </div>
                                             <div class="side-btn">
@@ -640,445 +651,375 @@
 
 
 <div class="blog">
-<div class="container">
-<div class="row justify-content-center">
-<div class="col-xl-6 col-lg-6 col-md-9">
-<div class="heading text-center">
-<h2>Our Lates News</h2>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum has been the industry's standard </p>
-</div>
-</div>
-</div>
-<div class="row justify-content-center">
-<div class="col-xl-4 col-lg-4 col-sm-6">
-<div class="single-box">
-<div class="part-img">
-<img src="assets/images/blog-img-1.jpg" alt="image">
-<div class="add-information">
-<ul>
-<li class="post-date">April 03</li>
-<li>
-<span class="comnt"><i class="far fa-comment"></i> 35</span>
-<span class="like"><i class="far fa-heart"></i> 99</span>
-</li>
-</ul>
-</div>
-</div>
-<div class="admin">
-<img src="assets/images/blog-admin.png" alt="image">
-<span>by shaikh darda</span>
-<span>/</span>
-<span>03.04.2021</span>
-</div>
-<div class="part-txt">
-<h3 class="title">Two girls are doing make up in front</h3>
-<div class="bottom">
-<a href="#" class="read">Read More</a>
-<div class="share">
-<svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="share-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-share-alt fa-w-14 fa-fw fa-2x"><path fill="currentColor" d="M352 320c-28.6 0-54.2 12.5-71.8 32.3l-95.5-59.7c9.6-23.4 9.7-49.8 0-73.2l95.5-59.7c17.6 19.8 43.2 32.3 71.8 32.3 53 0 96-43 96-96S405 0 352 0s-96 43-96 96c0 13 2.6 25.3 7.2 36.6l-95.5 59.7C150.2 172.5 124.6 160 96 160c-53 0-96 43-96 96s43 96 96 96c28.6 0 54.2-12.5 71.8-32.3l95.5 59.7c-4.7 11.3-7.2 23.6-7.2 36.6 0 53 43 96 96 96s96-43 96-96c-.1-53-43.1-96-96.1-96zm0-288c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM96 320c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64zm256 160c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z" class=""></path></svg>
-<div class="social">
-<a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
-<a href="#" class="tw"><i class="fab fa-twitter"></i></a>
-<a href="#" class="gl"><i class="fab fa-google-plus-g"></i></a>
-<a href="#" class="in"><i class="fab fa-linkedin-in"></i></a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="col-xl-4 col-lg-4 col-sm-6">
-<div class="single-box">
-<div class="part-img">
-<img src="assets/images/blog-img-2.jpg" alt="image">
-<div class="add-information">
-<ul>
-<li class="post-date">April 03</li>
-<li>
-<span class="comnt"><i class="far fa-comment"></i> 35</span>
-<span class="like"><i class="far fa-heart"></i> 99</span>
-</li>
-</ul>
-</div>
-</div>
-<div class="admin">
-<img src="assets/images/blog-admin.png" alt="image">
-<span>by shaikh darda</span>
-<span>/</span>
-<span>03.04.2021</span>
-</div>
-<div class="part-txt">
-<h3 class="title">Side view makeup artist applying powder</h3>
-<div class="bottom">
-<a href="#" class="read">Read More</a>
-<div class="share">
-<svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="share-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-share-alt fa-w-14 fa-fw fa-2x"><path fill="currentColor" d="M352 320c-28.6 0-54.2 12.5-71.8 32.3l-95.5-59.7c9.6-23.4 9.7-49.8 0-73.2l95.5-59.7c17.6 19.8 43.2 32.3 71.8 32.3 53 0 96-43 96-96S405 0 352 0s-96 43-96 96c0 13 2.6 25.3 7.2 36.6l-95.5 59.7C150.2 172.5 124.6 160 96 160c-53 0-96 43-96 96s43 96 96 96c28.6 0 54.2-12.5 71.8-32.3l95.5 59.7c-4.7 11.3-7.2 23.6-7.2 36.6 0 53 43 96 96 96s96-43 96-96c-.1-53-43.1-96-96.1-96zm0-288c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM96 320c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64zm256 160c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z" class=""></path></svg>
-<div class="social">
-<a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
-<a href="#" class="tw"><i class="fab fa-twitter"></i></a>
-<a href="#" class="gl"><i class="fab fa-google-plus-g"></i></a>
-<a href="#" class="in"><i class="fab fa-linkedin-in"></i></a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="col-xl-4 col-lg-4 col-sm-6">
-<div class="single-box">
-<div class="part-img">
-<img src="assets/images/blog-img-3.jpg" alt="image">
-<div class="add-information">
-<ul>
-<li class="post-date">April 03</li>
-<li>
-<span class="comnt"><i class="far fa-comment"></i> 35</span>
-<span class="like"><i class="far fa-heart"></i> 99</span>
-</li>
-</ul>
-</div>
-</div>
-<div class="admin">
-<img src="assets/images/blog-admin.png" alt="image">
-<span>by shaikh darda</span>
-<span>/</span>
-<span>03.04.2021</span>
-</div>
-<div class="part-txt">
-<h3 class="title">Portrait of the beautiful woman with long hair</h3>
-<div class="bottom">
-<a href="#" class="read">Read More</a>
-<div class="share">
-<svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="share-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-share-alt fa-w-14 fa-fw fa-2x"><path fill="currentColor" d="M352 320c-28.6 0-54.2 12.5-71.8 32.3l-95.5-59.7c9.6-23.4 9.7-49.8 0-73.2l95.5-59.7c17.6 19.8 43.2 32.3 71.8 32.3 53 0 96-43 96-96S405 0 352 0s-96 43-96 96c0 13 2.6 25.3 7.2 36.6l-95.5 59.7C150.2 172.5 124.6 160 96 160c-53 0-96 43-96 96s43 96 96 96c28.6 0 54.2-12.5 71.8-32.3l95.5 59.7c-4.7 11.3-7.2 23.6-7.2 36.6 0 53 43 96 96 96s96-43 96-96c-.1-53-43.1-96-96.1-96zm0-288c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM96 320c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64zm256 160c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z" class=""></path></svg>
-<div class="social">
-<a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
-<a href="#" class="tw"><i class="fab fa-twitter"></i></a>
-<a href="#" class="gl"><i class="fab fa-google-plus-g"></i></a>
-<a href="#" class="in"><i class="fab fa-linkedin-in"></i></a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-6 col-md-9">
+                <div class="heading text-center">
+                    <h2>TIN TỨC- SỰ KIỆN</h2>
+                    <p>Bảo Minh Châu cung cấp các sản phẩm về thức ăn dinh dưỡng, đồ dùng, phụ kiện làm đẹp cho chó mèo. Sản phẩm của chúng tôi có nguồn gốc, xuất xứ rõ ràng. Đồng thời sản phẩm cũng được đảm bảo về chất lượng, độ an toàn đối với sức khỏe của thú cưng.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            {% for post in Post %}
+            <div class="col-xl-4 col-lg-4 col-sm-6">
+                <div class="single-box">
+                    <div class="part-img">
+                        <img src="{{post.image.url}}" style="height: 218px;" alt="image">
+                        <div class="add-information">
+                            
+                        </div>
+                    </div>
+                    <div class="admin">
+                        <!-- <img src="{% static 'images/blog-admin.png' %}" alt="image"> -->
+                        <span>{{user.username}}</span>
+                        <span>/</span>
+                        <span>{{post.date}}</span>
+                    </div>
+                    <div class="part-txt">
+                        <h3 class="title">{{post.title}}</h3>
+                        <div class="bottom">
+                            <a href="/blog/{{post.id}}" class="read">Đọc thêm</a>
+                            <div class="share">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="share-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-share-alt fa-w-14 fa-fw fa-2x">
+                                    <path fill="currentColor" d="M352 320c-28.6 0-54.2 12.5-71.8 32.3l-95.5-59.7c9.6-23.4 9.7-49.8 0-73.2l95.5-59.7c17.6 19.8 43.2 32.3 71.8 32.3 53 0 96-43 96-96S405 0 352 0s-96 43-96 96c0 13 2.6 25.3 7.2 36.6l-95.5 59.7C150.2 172.5 124.6 160 96 160c-53 0-96 43-96 96s43 96 96 96c28.6 0 54.2-12.5 71.8-32.3l95.5 59.7c-4.7 11.3-7.2 23.6-7.2 36.6 0 53 43 96 96 96s96-43 96-96c-.1-53-43.1-96-96.1-96zm0-288c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM96 320c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64zm256 160c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z" class=""></path>
+                                </svg>
+                                <div class="social">
+                                    <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="tw"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="gl"><i class="fab fa-google-plus-g"></i></a>
+                                    <a href="#" class="in"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            {% endfor %}
+         
+            
+            
+        </div>
+    </div>
 </div>
 
 
-<div class="products">
-<div class="container">
-<div class="row justify-content-center">
-<div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
-<div class="single-part">
-<div class="top">
-<h2>Featured Products</h2>
-</div>
-<div class="single-box">
-<div class="row no-gutters">
-<div class="col-xl-9 col-lg-9 col-8">
-<div class="part-txt">
-<a href="shop-details-1.html">Atomic Vintage Shoes</a>
-<h4 class="price">$480 <span>$650</span></h4>
-<div class="star">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-</div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-3 col-4">
-<div class="part-img">
-<img src="assets/images/prdct-img-1-a.png" class="img-1" alt="image">
-<img src="assets/images/prdct-img-1-b.png" class="img-2" alt="image">
-</div>
-</div>
-</div>
-</div>
-<div class="single-box">
-<div class="row no-gutters">
-<div class="col-xl-9 col-lg-9 col-8">
-<div class="part-txt">
-<a href="shop-details-1.html">Aesthetica Cosmetics Woman</a>
-<h4 class="price">$699</h4>
-<div class="star">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-</div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-3 col-4">
-<div class="part-img">
-<img src="assets/images/prdct-img-2-a.png" class="img-1" alt="image">
-<img src="assets/images/prdct-img-2-b.png" class="img-2" alt="image">
-</div>
-</div>
-</div>
-</div>
-<div class="single-box">
-<div class="row no-gutters">
-<div class="col-xl-9 col-lg-9 col-8">
-<div class="part-txt">
-<a href="shop-details-1.html">Candy Women's Perfume</a>
-<h4 class="price">$845</h4>
-<div class="star">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-</div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-3 col-4">
-<div class="part-img">
-<img src="assets/images/prdct-img-3-a.png" class="img-1" alt="image">
-<img src="assets/images/prdct-img-5-b.png" class="img-2" alt="image">
-</div>
-</div>
-</div>
-</div> 
-</div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
-<div class="single-part">
-<div class="top">
-<h2>Onsale Products</h2>
-</div>
-<div class="single-box">
-<div class="row no-gutters">
-<div class="col-xl-9 col-lg-9 col-8">
-<div class="part-txt">
-<a href="shop-details-1.html">Android Sport Smartwatch</a>
-<h4 class="price">$640</h4>
-<div class="star">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-</div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-3 col-4">
-<div class="part-img">
-<img src="assets/images/prdct-img-4-a.png" class="img-1" alt="image">
-<img src="assets/images/prdct-img-4-b.png" class="img-2" alt="image">
-</div>
-</div>
-</div>
-</div>
-<div class="single-box">
-<div class="row no-gutters">
-<div class="col-xl-9 col-lg-9 col-8">
-<div class="part-txt">
-<a href="shop-details-1.html">Water Lip Stain leaves lips soft</a>
-<h4 class="price">$350 <span>$420</span></h4>
-<div class="star">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-</div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-3 col-4">
-<div class="part-img">
-<img src="assets/images/prdct-img-5-a.png" class="img-1" alt="image">
-<img src="assets/images/prdct-img-5-b.png" class="img-2" alt="image">
-</div>
-</div>
-</div>
-</div>
-<div class="single-box">
-<div class="row no-gutters">
-<div class="col-xl-9 col-lg-9 col-8">
-<div class="part-txt">
-<a href="shop-details-1.html">Mondrian Watch for Woman</a>
-<h4 class="price">$499</h4>
-<div class="star">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
- </div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-3 col-4">
-<div class="part-img">
-<img src="assets/images/prdct-img-6-a.png" class="img-1" alt="image">
-<img src="assets/images/prdct-img-6-b.png" class="img-2" alt="image">
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
-<div class="single-part end">
-<div class="top">
-<h2>Top Rated Products</h2>
-</div>
-<div class="single-box">
-<div class="row no-gutters">
-<div class="col-xl-9 col-lg-9 col-8">
-<div class="part-txt">
-<a href="shop-details-1.html">Rimmel Stay Matte Foundation</a>
-<h4 class="price">$499</h4>
-<div class="star">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-</div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-3 col-4">
-<div class="part-img">
-<img src="assets/images/prdct-img-7-a.png" class="img-1" alt="image">
-<img src="assets/images/prdct-img-7-b.png" class="img-2" alt="image">
-</div>
-</div>
-</div>
-</div>
-<div class="single-box">
-<div class="row no-gutters">
-<div class="col-xl-9 col-lg-9 col-8">
-<div class="part-txt">
-<a href="shop-details-1.html">Face for Oval Brush Holder</a>
-<h4 class="price">$499</h4>
-<div class="star">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-</div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-3 col-4">
-<div class="part-img">
-<img src="assets/images/prdct-img-8-a.png" class="img-1" alt="image">
-<img src="assets/images/prdct-img-8-b.png" class="img-2" alt="image">
-</div>
-</div>
-</div>
-</div>
-<div class="single-box">
-<div class="row no-gutters">
-<div class="col-xl-9 col-lg-9 col-8">
- <div class="part-txt">
-<a href="shop-details-1.html">Prada Wool A-line Midi Skirt</a>
-<h4 class="price">$780 <span>$820</span></h4>
-<div class="star">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-</div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-3 col-4">
-<div class="part-img">
-<img src="assets/images/prdct-img-9-a.png" class="img-1" alt="image">
-<img src="assets/images/prdct-img-9-b.png" class="img-2" alt="image">
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<!-- <div class="products">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+                <div class="single-part">
+                    <div class="top">
+                        <h2>Featured Products</h2>
+                    </div>
+                    <div class="single-box">
+                        <div class="row no-gutters">
+                            <div class="col-xl-9 col-lg-9 col-8">
+                                <div class="part-txt">
+                                    <a href="#">Atomic Vintage Shoes</a>
+                                    <h4 class="price">$480 <span>$650</span></h4>
+                                    <div class="star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-4">
+                                <div class="part-img">
+                                    <img src="{% static 'images/prdct-img-1-a.png' %}" class="img-1" alt="image">
+                                    <img src="{% static 'images/prdct-img-1-b.png' %}" class="img-2" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-box">
+                        <div class="row no-gutters">
+                            <div class="col-xl-9 col-lg-9 col-8">
+                                <div class="part-txt">
+                                    <a href="shop-details-1.html">Aesthetica Cosmetics Woman</a>
+                                    <h4 class="price">$699</h4>
+                                    <div class="star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-4">
+                                <div class="part-img">
+                                    <img src="{% static 'images/prdct-img-2-a.png' %}" class="img-1" alt="image">
+                                    <img src="{% static 'images/prdct-img-2-b.png' %}" class="img-2" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-box">
+                        <div class="row no-gutters">
+                            <div class="col-xl-9 col-lg-9 col-8">
+                                <div class="part-txt">
+                                    <a href="shop-details-1.html">Candy Women's Perfume</a>
+                                    <h4 class="price">$845</h4>
+                                    <div class="star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-4">
+                                <div class="part-img">
+                                    <img src="{% static 'images/prdct-img-3-a.png' %}" class="img-1" alt="image">
+                                    <img src="{% static 'images/prdct-img-5-b.png' %}" class="img-2" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+                <div class="single-part">
+                    <div class="top">
+                        <h2>Onsale Products</h2>
+                    </div>
+                    <div class="single-box">
+                        <div class="row no-gutters">
+                            <div class="col-xl-9 col-lg-9 col-8">
+                                <div class="part-txt">
+                                    <a href="shop-details-1.html">Android Sport Smartwatch</a>
+                                    <h4 class="price">$640</h4>
+                                    <div class="star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-4">
+                                <div class="part-img">
+                                    <img src="assets/images/prdct-img-4-a.png" class="img-1" alt="image">
+                                    <img src="assets/images/prdct-img-4-b.png" class="img-2" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-box">
+                        <div class="row no-gutters">
+                            <div class="col-xl-9 col-lg-9 col-8">
+                                <div class="part-txt">
+                                    <a href="shop-details-1.html">Water Lip Stain leaves lips soft</a>
+                                    <h4 class="price">$350 <span>$420</span></h4>
+                                    <div class="star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-4">
+                                <div class="part-img">
+                                    <img src="assets/images/prdct-img-5-a.png" class="img-1" alt="image">
+                                    <img src="assets/images/prdct-img-5-b.png" class="img-2" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-box">
+                        <div class="row no-gutters">
+                            <div class="col-xl-9 col-lg-9 col-8">
+                                <div class="part-txt">
+                                    <a href="shop-details-1.html">Mondrian Watch for Woman</a>
+                                    <h4 class="price">$499</h4>
+                                    <div class="star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-4">
+                                <div class="part-img">
+                                    <img src="assets/images/prdct-img-6-a.png" class="img-1" alt="image">
+                                    <img src="assets/images/prdct-img-6-b.png" class="img-2" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+                <div class="single-part end">
+                    <div class="top">
+                        <h2>Top Rated Products</h2>
+                    </div>
+                    <div class="single-box">
+                        <div class="row no-gutters">
+                            <div class="col-xl-9 col-lg-9 col-8">
+                                <div class="part-txt">
+                                    <a href="shop-details-1.html">Rimmel Stay Matte Foundation</a>
+                                    <h4 class="price">$499</h4>
+                                    <div class="star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-4">
+                                <div class="part-img">
+                                    <img src="assets/images/prdct-img-7-a.png" class="img-1" alt="image">
+                                    <img src="assets/images/prdct-img-7-b.png" class="img-2" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-box">
+                        <div class="row no-gutters">
+                            <div class="col-xl-9 col-lg-9 col-8">
+                                <div class="part-txt">
+                                    <a href="shop-details-1.html">Face for Oval Brush Holder</a>
+                                    <h4 class="price">$499</h4>
+                                    <div class="star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-4">
+                                <div class="part-img">
+                                    <img src="assets/images/prdct-img-8-a.png" class="img-1" alt="image">
+                                    <img src="assets/images/prdct-img-8-b.png" class="img-2" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-box">
+                        <div class="row no-gutters">
+                            <div class="col-xl-9 col-lg-9 col-8">
+                                <div class="part-txt">
+                                    <a href="shop-details-1.html">Prada Wool A-line Midi Skirt</a>
+                                    <h4 class="price">$780 <span>$820</span></h4>
+                                    <div class="star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-4">
+                                <div class="part-img">
+                                    <img src="assets/images/prdct-img-9-a.png" class="img-1" alt="image">
+                                    <img src="assets/images/prdct-img-9-b.png" class="img-2" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+    
 
 
 <div class="brands">
-<div class="container">
-<div class="row">
-<div class="col-xl-12 col-lg-12">
-<div class="all-brand owl-carousel">
-<div class="single-brand">
-<img src="assets/images/brand-1.png" alt="image">
-</div>
-<div class="single-brand">
-<img src="assets/images/brand-2.png" alt="image">
-</div>
-<div class="single-brand">
-<img src="assets/images/brand-3.png" alt="image">
-</div>
-<div class="single-brand">
-<img src="assets/images/brand-4.png" alt="image">
-</div>
-<div class="single-brand">
-<img src="assets/images/brand-5.png" alt="image">
-</div>
-<div class="single-brand">
-<img src="assets/images/brand-6.png" alt="image">
-</div>
-<div class="single-brand">
-<img src="assets/images/brand-7.png" alt="image">
-</div>
-<div class="single-brand">
-<img src="assets/images/brand-8.png" alt="image">
-</div>
-<div class="single-brand">
-<img src="assets/images/brand-9.png" alt="image">
-</div>
-</div>
-</div>
-</div>
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="all-brand owl-carousel">
+                    <div class="single-brand">
+                        <img src="{% static 'images/brand-1.png' %}" alt="image">
+                    </div>
+                    <div class="single-brand">
+                        <img src="{% static 'images/brand-2.png' %}" alt="image">
+                    </div>
+                    <div class="single-brand">
+                        <img src="{% static 'images/brand-3.png' %}" alt="image">
+                    </div>
+                    <div class="single-brand">
+                        <img src="{% static 'images/brand-4.png' %}" alt="image">
+                    </div>
+                    <div class="single-brand">
+                        <img src="{% static 'images/brand-5.png' %}" alt="image">
+                    </div>
+                    <div class="single-brand">
+                        <img src="{% static 'images/brand-6.png' %}" alt="image">
+                    </div>
+                    <div class="single-brand">
+                        <img src="{% static 'images/brand-7.png' %}" alt="image">
+                    </div>
+                    <div class="single-brand">
+                        <img src="{% static 'images/brand-8.png' %}" alt="image">
+                    </div>
+                    <div class="single-brand">
+                        <img src="{% static 'images/brand-9.png' %}" alt="image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
 <div class="instagram">
-<div class="posts owl-carousel">
-<div class="single-post">
-<img src="assets/images/insta-img-1.png" alt="image">
-<div class="txt">
-<a href="#"><span><i class="fab fa-instagram"></i></span>instagram</a>
-</div>
-</div>
-<div class="single-post">
-<img src="assets/images/insta-img-2.png" alt="image">
-<div class="txt">
-<a href="#"><span><i class="fab fa-instagram"></i></span>instagram</a>
-</div>
-</div>
-<div class="single-post">
-<img src="assets/images/insta-img-3.png" alt="image">
-<div class="txt">
-<a href="#"><span><i class="fab fa-instagram"></i></span>instagram</a>
-</div>
-</div>
-<div class="single-post">
-<img src="assets/images/insta-img-4.png" alt="image">
-<div class="txt">
-<a href="#"><span><i class="fab fa-instagram"></i></span>instagram</a>
-</div>
-</div>
-<div class="single-post">
-<img src="assets/images/insta-img-5.png" alt="image">
-<div class="txt">
-<a href="#"><span><i class="fab fa-instagram"></i></span>instagram</a>
-</div>
-</div>
-<div class="single-post">
-<img src="assets/images/insta-img-6.png" alt="image">
-<div class="txt">
-<a href="#"><span><i class="fab fa-instagram"></i></span>instagram</a>
-</div>
-</div>
-</div>
+    <div class="posts owl-carousel">
+        <div class="single-post">
+            <img src="{% static 'images/BS-2.png' %}" alt="image">
+            <div class="txt">
+                <a href="#"><span><i class="fab fa-instagram"></i></span>instagram</a>
+            </div>
+        </div>
+        <div class="single-post">
+            <img src="{% static 'images/BS.png' %}" alt="image">
+            <div class="txt">
+                <a href="#"><span><i class="fab fa-instagram"></i></span>instagram</a>
+            </div>
+        </div>
+        <div class="single-post">
+            <img src="{% static 'images/BS-1.png' %}" alt="image">
+            <div class="txt">
+                <a href="#"><span><i class="fab fa-instagram"></i></span>instagram</a>
+            </div>
+        </div>
+        <div class="single-post">
+            <img src="{% static 'images/TS.BS-Van-My-Tien-4.png' %}" alt="image">
+            <div class="txt">
+                <a href="#"><span><i class="fab fa-instagram"></i></span>instagram</a>
+            </div>
+        </div>
+        <!-- <div class="single-post">
+            <img src="{% static 'images/insta-img-5.png' %}" alt="image">
+            <div class="txt">
+                <a href="#"><span><i class="fab fa-instagram"></i></span>instagram</a>
+            </div>
+        </div>
+        <div class="single-post">
+            <img src="{% static 'images/insta-img-6.png' %}" alt="image">
+            <div class="txt">
+                <a href="#"><span><i class="fab fa-instagram"></i></span>instagram</a>
+            </div>
+        </div> -->
+    </div>
 </div>
 {% endblock %}
