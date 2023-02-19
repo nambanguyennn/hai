@@ -7,11 +7,14 @@ from cart.models import Cart,CartItem
 from order.models import Order
 from blog.models import Post
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
-from django.http import JsonResponse,HttpResponseRedirect
+from django.http import JsonResponse,HttpResponseRedirect , response
 import json
 import datetime
 from product.forms import CommentForm
 # Create your views here.
+
+def healthies(request):
+    return response('OK')
 
 def categories(request):
     return {
